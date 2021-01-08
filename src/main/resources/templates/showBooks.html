@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="StyleSheet.css"/>
+
+    <meta charset="UTF-8">
+    <title>Główna</title>
+</head>
+<body>
+<nav>
+    <a href="javascript:history.back()">Back to previous page</a>
+</nav>
+<div class="tabela">
+    <table class="table">
+        <tr style="text-align: center">
+            <th>Tytuł</th>
+            <th>Autor</th>
+            <th>Gatunek</th>
+            <th>isbn</th>
+        </tr>
+
+        <tbody>
+
+
+        <tr th:each="book: ${book}">
+
+            <td th:text="${book.tytul}"></td>
+
+            <td th:text="${book.autor}"></td>
+
+            <td th:text="${book.gatunek}"></td>
+
+            <td th:text="${book.isbn}"></td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
