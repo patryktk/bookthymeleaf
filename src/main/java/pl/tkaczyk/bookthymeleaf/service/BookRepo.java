@@ -9,6 +9,6 @@ import javax.transaction.Transactional;
 @Transactional
 @Repository
 public interface BookRepo extends JpaRepository<Book, Long> {
-    void deleteByTytul(String tytul);
+    Book findBookByTytul(String tytul);
 
 }

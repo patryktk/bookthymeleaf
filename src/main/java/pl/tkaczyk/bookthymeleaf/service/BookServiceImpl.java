@@ -23,14 +23,9 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public boolean addBook(Book book) {
-        bookRepo.save(book);
+    public boolean findBookByTitle(String title) {
+        bookRepo.findBookByTytul(title);
         return true;
-    }
-
-    @Override
-    public void deleteBookByTytul(String tytul) {
-        bookRepo.deleteByTytul(tytul);
     }
 
 

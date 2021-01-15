@@ -33,6 +33,12 @@
             <td th:text="${book.gatunek}"></td>
 
             <td th:text="${book.isbn}"></td>
+            <td>
+                <a th:href="@{/deleteBook/{book_id}(book_id=${book.book_id})}" class="btn btn-primary"><i class="fas fa-user-times ml-2"></i>Delete</a>
+            </td>
+            <td>
+                <a th:href="@{/editBook/{book_id}(book_id=${book.book_id})}" class="btn btn-primary"><i class="fas fa-user-times ml-2"></i>Edit</a>
+            </td>
 
         </tr>
         </tbody>

@@ -2,15 +2,14 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Dodaj nową ksiażke</title>
+    <title>Title</title>
 </head>
 <body>
-<nav>
-    <a href="javascript:history.back()">Back to previous page</a>
-</nav>
-<form action="#" th:action="@{/addbook}" th:object="${book}" method="post">
 
-
+<form action="#"
+      th:action="@{/editBook/{book_id}(book_id=${book.book_id})}"
+      th:object="${book}"
+      method="post">
     <label for="tytul">Tytuł</label>
     <input type="text" th:field="*{tytul}" id="tytul" placeholder="Tytuł">
     <br><br>
@@ -23,12 +22,10 @@
     <input type="text" th:field="*{gatunek}" id="gatunek" placeholder="Gatunek">
     <br><br>
 
-    <label for="isbn">Stan książi</label>
+    <label for="isbn">Numer ISBN</label>
     <input type="text" th:field="*{isbn}" id="isbn" placeholder="Numer isbn">
     <br><br>
-
-
-    <input type="submit" value="Dodaj książkę">
+    <input type="submit" value="Edit Book">
 </form>
 
 </body>
