@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
@@ -19,12 +19,14 @@
             <th>Autor</th>
             <th>Gatunek</th>
             <th>isbn</th>
+            <th></th>
+            <th></th>
         </tr>
 
         <tbody>
 
 
-        <tr th:each="book: ${book}">
+        <tr align="center" th:each="book: ${book}">
 
             <td th:text="${book.tytul}"></td>
 
@@ -34,10 +36,10 @@
 
             <td th:text="${book.isbn}"></td>
             <td>
-                <a th:href="@{/deleteBook/{book_id}(book_id=${book.book_id})}" class="btn btn-primary"><i class="fas fa-user-times ml-2"></i>Delete</a>
+                <a th:href="@{/deleteBook/{book_id}(book_id=${book.book_id})}" class="btn btn-outline-danger"><i class="fas fa-user-times ml-2"></i>Delete</a>
             </td>
-            <td>
-                <a th:href="@{/editBook/{book_id}(book_id=${book.book_id})}" class="btn btn-primary"><i class="fas fa-user-times ml-2"></i>Edit</a>
+            <td align="left">
+                <a th:href="@{/editBookForm/{book_id}(book_id=${book.book_id})}" class="btn btn-outline-secondary"><i class="fas fa-user-times ml-2"></i>Edit</a>
             </td>
 
         </tr>

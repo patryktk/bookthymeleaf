@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -7,14 +7,14 @@
 <body>
 
 <form action="#"
-      th:action="@{/editBook/{book_id}(book_id=${book.book_id})}"
+      th:action="@{/editBook/{book_id}(book_id=${book_id})}"
       th:object="${book}"
       method="post">
     <label for="tytul">Tytuł</label>
     <input type="text" th:field="*{tytul}" id="tytul" placeholder="Tytuł">
     <br><br>
 
-    <label for="autor">Name</label>
+    <label for="autor">Autor</label>
     <input type="text" th:field="*{autor}" id="autor" placeholder="Autor">
     <br><br>
 

@@ -1,9 +1,10 @@
 package pl.tkaczyk.bookthymeleaf.model;
-import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 @JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
 @JsonPropertyOrder({
@@ -14,13 +15,13 @@ import java.util.Map;
 public class Movie {
 
     @JsonProperty("movie_id")
-    public Integer movieId;
+    private Integer movieId;
     @JsonProperty("movie_name")
-    public String movieName;
+    private String movieName;
     @JsonProperty("movie_genre")
-    public String movieGenre;
+    private String movieGenre;
     @JsonIgnore
-    public Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     @JsonProperty("movie_id")
     public Integer getMovieId() {

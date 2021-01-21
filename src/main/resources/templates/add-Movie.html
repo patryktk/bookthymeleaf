@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodaj nowy film</title>
+</head>
+<body>
+<nav>
+    <a href="javascript:history.back()">Back to previous page</a>
+</nav>
+<form action="#" th:action="@{/addMovie}" th:object="${newMovie}" method="post">
+
+
+    <label for="title">Tytuł</label>
+    <input type="text" th:field="*{movieName}" id="title" placeholder="Tytuł">
+    <br><br>
+
+    <label for="genre">Name</label>
+    <input type="text" th:field="*{movieGenre}" id="genre" placeholder="Gatunek">
+    <br><br>
+
+    <input type="submit" value="Dodaj Film">
+</form>
+
+</body>
+</html>
